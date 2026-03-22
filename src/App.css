@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&display=swap');
+
+/* =============================================
+   RESET & BASE
+   ============================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: linear-gradient(135deg, #d406b9 0%, #5f034f 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =============================================
+   CONTAINER UTAMA
+   ============================================= */
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+/* =============================================
+   SCENE — WRAPPER TIAP HALAMAN
+   ============================================= */
+.scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+  animation: fadeInUp 0.5s ease both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =============================================
+   NAILONG IMAGE & WRAPPER
+   ============================================= */
+.gif-wrapper {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.gif-wrapper:hover .nailong-img {
+  transform: scale(1.05);
+}
+
+.nailong-img {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 24px rgba(255, 210, 100, 0.5));
+  transition: transform 0.2s ease;
+  border-radius: 20px;
+}
+
+/* =============================================
+   TEKS
+   ============================================= */
+.instruction {
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.7;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.big-text {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #ffd54f;
+  text-shadow: 0 0 20px rgba(255, 213, 79, 0.5);
+}
+
+.result-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+h2 {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #ffd54f;
+  text-shadow: 0 0 16px rgba(255, 213, 79, 0.4);
+}
+
+/* =============================================
+   TOMBOL UTAMA (orange)
+   ============================================= */
+.click-btn {
+  background: linear-gradient(135deg, #f9a825, #ff6f00);
+  color: white;
+  border: none;
+  padding: 14px 36px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 20px rgba(249, 168, 37, 0.45);
+  letter-spacing: 0.3px;
+}
+
+.click-btn:hover {
+  transform: scale(1.06);
+  box-shadow: 0 6px 28px rgba(249, 168, 37, 0.65);
+}
+
+.click-btn:active {
+  transform: scale(0.97);
+}
+
+.click-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* =============================================
+   GRUP TOMBOL (iya / tidak)
+   ============================================= */
+.btn-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-yes {
+  background: linear-gradient(135deg, #00c853, #1b5e20);
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 16px rgba(0, 200, 83, 0.35);
+}
+
+.btn-yes:hover {
+  transform: scale(1.06);
+  box-shadow: 0 6px 22px rgba(0, 200, 83, 0.55);
+}
+
+.btn-yes:active {
+  transform: scale(0.97);
+}
+
+.btn-no {
+  background: linear-gradient(135deg, #e53935, #b71c1c);
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 16px rgba(229, 57, 53, 0.35);
+}
+
+.btn-no:hover {
+  transform: scale(1.06);
+  box-shadow: 0 6px 22px rgba(229, 57, 53, 0.55);
+}
+
+.btn-no:active {
+  transform: scale(0.97);
+}
+
+/* =============================================
+   SURAT UCAPAN
+   ============================================= */
+.letter-scene {
+  gap: 28px;
+}
+
+.letter-box {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  padding: 32px 28px;
+  line-height: 1.9;
+  font-size: 1rem;
+  text-align: left;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.letter-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  color: #ffd54f;
+  line-height: 1.5;
+}
+
+.letter-box strong {
+  color: #ffd54f;
+}
+
+.letter-box em {
+  color: #80cbc4;
+  font-style: italic;
+}
+
+.maaf-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.maaf-section p {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+/* =============================================
+   INPUT FIELD
+   ============================================= */
+.input-field {
+  width: 100%;
+  max-width: 420px;
+  padding: 14px 22px;
+  border-radius: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  font-size: 1rem;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  outline: none;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.input-field::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.input-field:focus {
+  border-color: #ffd54f;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* =============================================
+   ERROR TEXT
+   ============================================= */
+.error-text {
+  color: #ff6b6b;
+  font-weight: 700;
+  font-size: 0.95rem;
+  animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-8px); }
+  40%       { transform: translateX(8px); }
+  60%       { transform: translateX(-5px); }
+  80%       { transform: translateX(5px); }
+}
+
+/* =============================================
+   SOAL KALKULUS
+   ============================================= */
+.soal-box {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 24px 32px;
+  width: 100%;
+  max-width: 440px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.soal-box p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+}
+
+.soal-text {
+  font-size: 2rem !important;
+  font-weight: 900 !important;
+  color: #ffd54f !important;
+  text-shadow: 0 0 20px rgba(255, 213, 79, 0.5);
+  letter-spacing: 1px;
+}
+
+.hint {
+  font-size: 0.82rem !important;
+  color: rgba(255, 255, 255, 0.4) !important;
+  font-style: italic;
+}
+
+/* =============================================
+   RESPONSIVE — MOBILE
+   ============================================= */
+@media (max-width: 480px) {
+  .nailong-img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .instruction {
+    font-size: 1rem;
+  }
+
+  .click-btn,
+  .btn-yes,
+  .btn-no {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+
+  .letter-box {
+    padding: 24px 18px;
+    font-size: 0.95rem;
+  }
+
+  .soal-text {
+    font-size: 1.6rem !important;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+}
